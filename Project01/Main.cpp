@@ -2,16 +2,24 @@
 #include <ctime>
 using namespace std;
 
-bool is_number_prime(int number); 
+bool is_number_prime1(int number); 
+bool is_number_prime2(int number);
 
 int main() {
+	long long number =	2147483647;
 
-	double now = time(0);
+	long long start_time = time(NULL);
+	bool result = is_number_prime1(number);
+	long long end_time = time(NULL);
 
-	cout << is_number_prime(7) << endl;
+	//cout << (result ? "Prime" : "Is not prime") << endl;
+	cout << "time: " << (end_time - start_time) << " sec" << endl;
 
-	now -= time(0);
-	cout << now;
+	start_time = time(NULL);
+	result = is_number_prime2(number);
+	end_time = time(NULL);
+
+	cout << "time: " << (end_time - start_time) << " sec" << endl;
 
 	return 0;
-}
+} 
